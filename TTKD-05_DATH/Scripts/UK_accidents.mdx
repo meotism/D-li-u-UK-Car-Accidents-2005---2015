@@ -1,0 +1,16 @@
+--Cau 1:
+SELECT NON EMPTY [Casualty Serity].[Casualty Serity].MEMBERS ON 0,
+NON EMPTY([Local Authority Distric].[LAD Name].MEMBERS) ON 1 FROM [Casualties]
+WHERE [Measures].[Fact Casualty Count]
+--Cau 2:
+SELECT NON EMPTY [Casualty Serity].[Casualty Serity].MEMBERS ON 0,
+NON EMPTY([Local Authority Distric].[LAD Name].MEMBERS,[Time Of Day].[Year].MEMBERS,[Time Of Day].[Quarter].MEMBERS) ON 1 FROM [Casualties]
+WHERE [Measures].[Fact Casualty Count]
+--Cau 3:
+SELECT NON EMPTY [Casualty Serity].[Casualty Serity].MEMBERS ON 0,
+NON EMPTY([Local Authority Distric].[LAD Name].MEMBERS,[Time Of Day].[Year],[Time Of Day].[Quarter]) ON 1 FROM [Casualties]
+WHERE [Measures].[Fact Casualty Count]
+--Cau 4:
+SELECT NON EMPTY [Casualty Serity].[Casualty Serity].MEMBERS ON 0,
+NON EMPTY([Local Authority Distric].[LAD Name].MEMBERS) ON 1 FROM [Casualties]
+WHERE [Measures].[Fact Casualty Count]
